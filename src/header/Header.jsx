@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import "./header.css";
 
 export const Header = () => {
@@ -8,6 +8,11 @@ export const Header = () => {
         <div className="headerList">
             <div className="headerListItem">
                 <FontAwesomeIcon icon={faBookOpen} />
+                <span>Upcoming Sessions</span>
+            </div>
+            <div className="headerListItem">
+                <FontAwesomeIcon icon={faCalendarDays} />
+                <span>Schedule</span>
             </div>
         </div>
     </div>
