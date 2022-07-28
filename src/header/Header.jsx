@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import "./header.css";
 
 export const Header = () => {
@@ -5,7 +7,7 @@ export const Header = () => {
     <div className="header">
         <div className="headerList">
             <div className="headerListItem">
-                <i class="fa-solid fa-book-open-cover"></i>
+                <FontAwesomeIcon icon={faBookOpen} />
             </div>
         </div>
     </div>
