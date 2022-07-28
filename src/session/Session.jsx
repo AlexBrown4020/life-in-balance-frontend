@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const session = () => {
+export const Session = () => {
   return (
     <div>Session</div>
   );
 }
 
-export default session;
+export default Session;
