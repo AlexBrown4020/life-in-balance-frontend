@@ -33,7 +33,7 @@ useEffect(() => {
 }, [])
   
   return (
-    <div className='App'>``
+    <div className='App'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -41,13 +41,15 @@ useEffect(() => {
           <Route path="/classes/:id" element={<Session/>}/>
         </Routes>
       </BrowserRouter>
-      {items.map((item, i) => (
-        <tr key={i}>
-          <td>{item.title}</td>
-          <td>{item.description}</td>
-          <td>{item.date}</td>
-          <td>{item.time}</td>
-        </tr>
+      {fetchError && <p style={{color: "red"}}>{`Error: ${fetchError}`}
+      </p>}
+      {!fetchError && items.map((item, i) => (
+        <div class="sessionDisplay" key={i}>
+          <p>{item.title}</p>
+          <p>{item.description}</p>
+          <p>{item.date}</p>
+          <p>{item.time}</p>
+        </div>
       ))}
     </div>
   );
