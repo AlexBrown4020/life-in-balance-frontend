@@ -7,15 +7,28 @@ import {
 import Home from './pages/home/Home.jsx';
 import { List } from './pages/home/list/List';
 import Session from './pages/home/session/Session';
-import { useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function App() {
+const API_URL = 'https://desolate-ravine-74694.herokuapp.com/classes/';
 
-  useEffect(() => {
-    fetch('https://desolate-ravine-74694.herokuapp.com/classes/')
-    .then((response) => console.log(response))
-  }, [])
+const [items, setItems] = useState([]);
 
+useEffect(() => {
+  const fetchItems = async () => {
+    try {
+      const response = await fetch(API_URL);
+      const listItems = await response.json();
+      console.log(listItems);
+      setItems(listItems);
+    } catch (err) {
+      console.log(err.stack);
+    }
+  };
+
+  (async () => await fetchItems())();
+}, [])
+  
   return (
     <div className='App'>
       <BrowserRouter>
