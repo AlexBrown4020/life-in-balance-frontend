@@ -23,8 +23,9 @@ useEffect(() => {
       const listItems = await response.json();
       console.log(listItems);
       setItems(listItems);
+      setFetchError(null);
     } catch (err) {
-      console.log(err.stack);
+      setFetchError(err.message);
     }
   };
 
@@ -32,7 +33,7 @@ useEffect(() => {
 }, [])
   
   return (
-    <div className='App'>
+    <div className='App'>``
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -40,6 +41,14 @@ useEffect(() => {
           <Route path="/classes/:id" element={<Session/>}/>
         </Routes>
       </BrowserRouter>
+      {items.map((item, i) => (
+        <tr key={i}>
+          <td>{item.title}</td>
+          <td>{item.description}</td>
+          <td>{item.date}</td>
+          <td>{item.time}</td>
+        </tr>
+      ))}
     </div>
   );
 }
