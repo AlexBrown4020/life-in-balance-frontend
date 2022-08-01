@@ -7,7 +7,7 @@ import {
 import Home from './pages/home/Home.jsx';
 import { List } from './pages/home/list/List';
 import Session from './pages/home/session/Session';
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 function App() {
 
